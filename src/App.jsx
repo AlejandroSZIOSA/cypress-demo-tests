@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Modal from "./components/Modal";
+
+import "./App.css";
+
+const RECEPTS = [
+  { id: 1, title: "r1", cocking_time: "10 min" },
+  { id: 2, title: "r2", cocking_time: "20 min" },
+  { id: 3, title: "r3", cocking_time: "30 min" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Cypress Basic Tests</h1>
+      <h2>Test on Modal</h2>
+      <button onClick={() => setIsModalOpen(open)}>Open The Modal</button>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}></Modal>
+    </div>
+  );
 }
 
-export default App
+export default App;
