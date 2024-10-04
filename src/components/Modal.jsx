@@ -3,7 +3,6 @@ import "./Modal.css";
 
 export default function Modal(props) {
   if (!props.isOpen) return null; // Do not render modal if it's not open
-
   return (
     <div className="modal-overlay">
       <div className="modal">
