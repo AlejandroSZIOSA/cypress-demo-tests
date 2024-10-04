@@ -2,12 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Modal from "./components/Modal";
 import Table from "./components/Table";
-
-const RECEPTS_DUMMY_DATA = [
-  { id: 1, title: "r1", cocking_time: "10 min" },
-  { id: 2, title: "r2", cocking_time: "20 min" },
-  { id: 3, title: "r3", cocking_time: "30 min" },
-];
+import recipesAPI from "./services/recipesAPI.json";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +13,7 @@ function App() {
       <button onClick={() => setIsModalOpen(true)}>Open The Modal</button>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}></Modal>
       <h2>Test on render a list Obj</h2>
-      <Table recepts={RECEPTS_DUMMY_DATA} />
+      <Table recepts={recipesAPI} />
     </div>
   );
 }
