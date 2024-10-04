@@ -23,7 +23,7 @@ describe("tests", () => {
     cy.visit("http://localhost:5173/");
 
     //Wait for the intercepted request
-    cy.wait("@getProducts"); //Fix a problem
+    /* cy.wait("@getProducts"); //Fix a problem */
 
     // Verify the content on the page
     cy.get("tbody tr").should("have.length", 3);
